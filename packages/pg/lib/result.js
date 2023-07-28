@@ -59,6 +59,20 @@ class Result {
     return row
   }
 
+  // parseRow(rowData) {
+  //   var row = {}
+  //   for (var i = 0, len = rowData.length; i < len; i++) {
+  //     var rawValue = rowData[i]
+  //     var field = this.fields[i].name
+  //     if (rawValue !== null) {
+  //       row[field] = this._parsers[i](rawValue)
+  //     } else {
+  //       row[field] = null
+  //     }
+  //   }
+  //   return row
+  // }
+
   parseRow(rowData) {
     var row = {}
     for (var i = 0, len = rowData.length; i < len; i++) {
@@ -70,7 +84,7 @@ class Result {
         row[field] = null
       }
     }
-    return row
+    return JSON.stringify(row)
   }
 
   addRow(row) {
